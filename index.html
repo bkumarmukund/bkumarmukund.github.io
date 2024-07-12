@@ -8,7 +8,7 @@
         // JavaScript for redirection based on current path
         var currentPath = window.location.pathname.substr(1); // Get current path after domain
         var newUrl = "https://hopelessly-classic-ghost.ngrok-free.app/" + currentPath; // Construct new URL
-        window.location.href = newUrl; // Redirect to new URL
+        window.location.replace(newUrl); // Redirect to new URL using replace to avoid keeping history
     </script>
 </head>
 <body>
