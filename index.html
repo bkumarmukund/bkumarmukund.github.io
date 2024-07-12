@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://hopelessly-classic-ghost.ngrok-free.app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
+    <script>
+        // JavaScript for redirection based on query parameter 'app'
+        (function() {
+            var app = new URLSearchParams(window.location.search).get('app'); // Get value of 'app' query parameter
+            var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}` : 'https://hopelessly-classic-ghost.ngrok-free.app'; // Construct redirection URL
+            window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
+        })();
+    </script>
 </head>
 <body>
     <p>If you are not redirected, <a href="https://hopelessly-classic-ghost.ngrok-free.app">click here</a>.</p>
