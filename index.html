@@ -9,7 +9,9 @@
         (function() {
             var app = new URLSearchParams(window.location.search).get('app'); // Get value of 'app' query parameter
             var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}` : 'https://hopelessly-classic-ghost.ngrok-free.app'; // Construct redirection URL
-            window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
+
+            alert(redirectTo);
+            //            window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
         })();
     </script>
 </head>
