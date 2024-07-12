@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <script>
         // Function to get query parameter value by name
         function getQueryParam(name) {
@@ -14,7 +17,8 @@
         // JavaScript for redirection based on query parameter 'app'
         (function() {
             var app = getQueryParam('app'); // Get value of 'app' query parameter
-            var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}` : 'https://hopelessly-classic-ghost.ngrok-free.app'; // Construct redirection URL
+            var randomQuery = '?cacheBuster=' + new Date().getTime(); // Add a cache-busting query string
+            var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}${randomQuery}` : `https://hopelessly-classic-ghost.ngrok-free.app${randomQuery}`; // Construct redirection URL
             alert('Redirecting to: ' + redirectTo); // Display alert with the redirection URL
             window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
         })();
