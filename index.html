@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
+        // Function to get query parameter value by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
         // JavaScript for redirection based on query parameter 'app'
         (function() {
-            var app = new URLSearchParams(window.location.search).get('app'); // Get value of 'app' query parameter
+            var app = getQueryParam('app'); // Get value of 'app' query parameter
             var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}` : 'https://hopelessly-classic-ghost.ngrok-free.app'; // Construct redirection URL
-
-            alert(redirectTo);
-            //            window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
+            alert('Redirecting to: ' + redirectTo); // Display alert with the redirection URL
+            window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
         })();
     </script>
 </head>
