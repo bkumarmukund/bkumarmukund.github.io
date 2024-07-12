@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirect Page</title>
     <script>
-        // JavaScript for redirection based on current path
-        var currentPath = window.location.pathname.substr(1); // Get current path after domain
-        var newUrl = "https://hopelessly-classic-ghost.ngrok-free.app/" + currentPath; // Construct new URL
+        // JavaScript for transparent redirection based on current path
+        var currentPath = window.location.pathname; // Get current path including domain
+        var newUrl = "https://hopelessly-classic-ghost.ngrok-free.app" + currentPath; // Construct new URL
         window.location.replace(newUrl); // Redirect to new URL using replace to avoid keeping history
     </script>
 </head>
 <body>
     <!-- Optional: Content for users without JavaScript or during redirection -->
-    <p>If you are not redirected, <a href="https://hopelessly-classic-ghost.ngrok-free.app/">click here</a>.</p>
+    <p>If you are not redirected, <a href="https://hopelessly-classic-ghost.ngrok-free.app">click here</a>.</p>
 </body>
 </html>
