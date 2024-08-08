@@ -18,7 +18,7 @@
         (function() {
             var app = getQueryParam('app'); // Get value of 'app' query parameter
             var randomQuery = '?cacheBuster=' + new Date().getTime(); // Add a cache-busting query string
-            var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}${randomQuery}` : `https://hopelessly-classic-ghost.ngrok-free.app${randomQuery}`; // Construct redirection URL
+            var redirectTo = app ? `https://hopelessly-classic-ghost.ngrok-free.app/${app}` : `https://hopelessly-classic-ghost.ngrok-free.app`; // Construct redirection URL
             alert('Redirecting to: ' + redirectTo); // Display alert with the redirection URL
             window.location.replace(redirectTo); // Redirect to the specified URL using replace to avoid keeping history
         })();
